@@ -45,7 +45,7 @@ const VerificationPage: React.FC = () => {
       setOtpSent(true);
       
       // Show success message
-      toast.success('OTP sent to your phone! Check your email.', { duration: 4000 });
+      toast.success('OTP sent to your phone! Check your SMS.', { duration: 4000 });
       
       // Always proceed to verify step
       setStep('verify');
@@ -141,7 +141,7 @@ const VerificationPage: React.FC = () => {
             </CardTitle>
             <CardDescription className="text-sm sm:text-base animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
               {step === 'request'
-                ? 'Enter your registration number to receive an OTP via email'
+                ? 'Enter your registration number to receive an OTP via SMS'
                 : 'Enter the OTP sent to your phone'}
             </CardDescription>
           </CardHeader>
@@ -153,7 +153,7 @@ const VerificationPage: React.FC = () => {
                   <Input
                     id="regNo"
                     type="text"
-                    placeholder="M24D14/025"
+                    placeholder="M24B13/054"
                     {...requestOTPForm.register('regNo')}
                     className={`h-12 sm:h-14 rounded-xl border-2 transition-all duration-300 focus:scale-[1.02] focus:border-pink-500 focus:ring-4 focus:ring-pink-200 ${
                       requestOTPForm.formState.errors.regNo ? 'border-red-500 focus:ring-red-200 animate-wiggle' : 'border-gray-200 hover:border-pink-300'
@@ -189,7 +189,7 @@ const VerificationPage: React.FC = () => {
 
                 <div className="p-4 bg-pink-50 border-2 border-pink-200 rounded-xl animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
                   <p className="text-xs text-pink-800 leading-relaxed">
-                    <strong>Note:</strong> OTP will be sent to your phone number via email. The code expires in <strong>5 minutes</strong>.
+                    <strong>Note:</strong> OTP will be sent to your phone number via SMS. The code expires in <strong>5 minutes</strong>.
                   </p>
                 </div>
               </form>
@@ -209,7 +209,7 @@ const VerificationPage: React.FC = () => {
                           Registration: <strong>{regNo}</strong>
                         </p>
                         <p className="text-xs text-pink-600 mt-1">
-                          Check your email and enter the 6-digit code below
+                          Check your SMS and enter the 6-digit code below
                         </p>
                       </div>
                     </div>
@@ -285,7 +285,7 @@ const VerificationPage: React.FC = () => {
                   onClick={async () => {
                     try {
                       await verificationAPI.requestOTP(regNo);
-                      toast.success('New OTP sent to your phone via email!');
+                      toast.success('New OTP sent to your phone via SMS!');
                     } catch (err: any) {
                       toast.error(err.response?.data?.error || 'Failed to resend OTP');
                     }

@@ -69,7 +69,7 @@ api.interceptors.response.use(
       if (errorMessage.includes('Invalid or inactive user') || errorMessage.includes('Invalid token') || errorMessage.includes('Token expired')) {
         // Redirect to login with message
         setTimeout(() => {
-          window.location.href = '/admin/login';
+          window.location.href = '/login';
         }, 100);
         return Promise.reject(new Error('Your session has expired. Please log in again.'));
       }
@@ -82,7 +82,7 @@ api.interceptors.response.use(
       
       // For other 401 errors, redirect to login
       setTimeout(() => {
-        window.location.href = '/admin/login';
+        window.location.href = '/login';
       }, 100);
     }
     return Promise.reject(error);

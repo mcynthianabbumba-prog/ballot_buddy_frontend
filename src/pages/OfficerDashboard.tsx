@@ -48,7 +48,7 @@ const OfficerDashboard: React.FC = () => {
         // ProtectedRoute should handle this, but double-check here
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        navigate('/admin/login');
+        navigate('/login');
         toast.error('Your account has been deactivated. Please contact the administrator.');
         return;
       }
