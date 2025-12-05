@@ -1,0 +1,42 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pinkGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#EC4899" />
+      <stop offset="100%" stopColor="#F472B6" />
+    </linearGradient>
+    <linearGradient id="pinkGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#F472B6" />
+      <stop offset="100%" stopColor="#FB7185" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#pinkGradient1)"/>
+  
+  <!-- Laptop Base -->
+  <rect x="30" y="68" width="40" height="6" rx="1.5" fill="#9CA3AF" opacity="0.9"/>
+  <rect x="32" y="69.5" width="36" height="3" rx="0.8" fill="#6B7280"/>
+  
+  <!-- Laptop Screen -->
+  <rect x="20" y="18" width="60" height="52" rx="2.5" fill="#1F2937"/>
+  <rect x="23" y="21" width="54" height="46" rx="2" fill="#FFFFFF"/>
+  
+  <!-- Ballot Box on Screen -->
+  <rect x="42" y="28" width="28" height="32" rx="2" fill="url(#pinkGradient2)"/>
+  <rect x="45" y="31" width="22" height="26" rx="1.5" fill="url(#pinkGradient1)"/>
+  <!-- Ballot Box Slot -->
+  <rect x="46" y="26" width="20" height="3.5" rx="1.75" fill="#1F2937"/>
+  
+  <!-- Ballot Paper (hand inserting) -->
+  <rect x="58" y="12" width="7" height="18" rx="1" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.8"/>
+  <!-- Checkboxes on ballot -->
+  <rect x="59.5" y="14" width="2" height="2" rx="0.5" fill="none" stroke="#9CA3AF" stroke-width="0.6"/>
+  <rect x="59.5" y="17.5" width="2" height="2" rx="0.5" fill="none" stroke="#9CA3AF" stroke-width="0.6"/>
+  <rect x="59.5" y="21" width="2" height="2" rx="0.5" fill="none" stroke="#9CA3AF" stroke-width="0.6"/>
+  <!-- Checkmark on first box -->
+  <path d="M59.5 14.5L60.5 15.5L62 14" stroke="#10B981" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Hand (simplified) -->
+  <ellipse cx="61.5" cy="9" rx="3" ry="2.5" fill="#FBBF24" opacity="0.95"/>
+  <path d="M59.5 9Q61.5 7 63.5 9" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+</svg>
