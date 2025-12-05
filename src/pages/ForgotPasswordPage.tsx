@@ -129,7 +129,7 @@ const ForgotPasswordPage: React.FC = () => {
 
           <div className="mt-6 text-center space-y-3">
             <Link
-              to="/candidate/login"
+              to="/login"
               className="text-sm text-purple-600 hover:text-purple-700 font-semibold hover:underline inline-flex items-center gap-1"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

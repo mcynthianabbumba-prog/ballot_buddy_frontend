@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
-import CandidateLoginPage from './pages/CandidateLoginPage';
-import AdminLoginPage from './pages/AdminLoginPage';
+import UnifiedLoginPage from './pages/UnifiedLoginPage';
+import VoterOTPPage from './pages/VoterOTPPage';
 import AdminDashboard from './pages/AdminDashboard';
 import OfficerDashboard from './pages/OfficerDashboard';
 import CandidateDashboard from './pages/CandidateDashboard';
@@ -25,9 +25,13 @@ function App() {
         {/* Home/Splash Page */}
         <Route path="/" element={<HomePage />} />
         
-        {/* Login Pages */}
-        <Route path="/candidate/login" element={<CandidateLoginPage />} />
-        <Route path="/admin/login" element={<AdminLoginPage />} />
+        {/* Unified Login Page */}
+        <Route path="/login" element={<UnifiedLoginPage />} />
+        <Route path="/login/otp" element={<VoterOTPPage />} />
+        
+        {/* Legacy login routes - redirect to unified login */}
+        <Route path="/candidate/login" element={<Navigate to="/login" replace />} />
+        <Route path="/admin/login" element={<Navigate to="/login" replace />} />
         
         {/* Registration */}
         <Route path="/candidate/register" element={<RegisterCandidate />} />
@@ -36,7 +40,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         
-        {/* Public voter routes */}
+        {/* Public voter routes (kept for backward compatibility) */}
         <Route path="/verify" element={<VerificationPage />} />
         <Route path="/vote" element={<VotingPage />} />
         
